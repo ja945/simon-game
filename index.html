@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simon Says Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="simon-logo.jpeg" type="image/icon type">
+  </head>
+  <body onload="myFunction()">
+    <h1>Simon Says Game</h1>
+    <h2>Press any key to start the game</h2>
+
+    <div class="btn-container">
+      <div class="line-one">
+        <div class="btn red" type="button" id="red"></div>
+        <div class="btn yellow" type="button" id="yellow"></div>
+      </div>
+      <div class="line-two">
+        <div class="btn green" type="button" id="green"></div>
+        <div class="btn purple" type="button" id="purple"></div>
+      </div>
+    </div>
+    <div class="reset">
+      <button class="resetbtn">Reset</button>
+    </div>
+    <div class="popup">
+      <span class="popuptext" id="myPopup">
+        <h3> 🎮 Simon Game Help ⚔️ </h3>
+        <p><strong>How to Play Memory Challenge Mode:</strong></p>
+        <ol>
+            <li>Click the "Ready" button to start the game.</li>
+            <li>Watch the box which is blinked and click it</li>
+            <li>You will pass the level and other box blinks.</li>
+            <li>Now click the previous blinked box and current box.</li>
+            <li>Reset button will restart Game</li>
+        </ol>
+        <p><strong>Tips:</strong></p>
+        <ul>
+            <li>Pay close attention to the blinking sequence.</li>
+            <li>Take your time to click each box correctly.</li>
+            <li>Have fun and challenge your memory skills!</li>
+        </ul>
+        <p>Are you ready to begin? Click the "Ready" button to start!</p>
+        <button id="close"> Ready</button>
+      </span>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
