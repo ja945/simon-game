@@ -4,23 +4,20 @@ let lvl = 0;
 let isgamestarted = false;
 let lvlpassed = true;
 let flashlvl = 0;
-
 let h2 = document.querySelector("h2");
 let btns = document.querySelectorAll(".btn");
 let resetbtn = document.querySelector(".resetbtn");
 let closeButton = document.getElementById("closebtn");
 let popup = document.getElementById("myPopup");
-let overlay = document.getElementById("overlay");
-
 gameBegin(0);
-
+// Game starts
 function gameBegin(newlevel) {
     if (newlevel === 0) {
         flashArr = [];
     }
     clickedArr = [];
     lvl = newlevel + 1;
-    h2.innerText = level ${lvl};
+    h2.innerText = `level ${lvl}`;
     console.log("level ", lvl);
     isgamestarted = true;
     let randno = Math.floor(Math.random() * 4) + 1;
@@ -31,25 +28,32 @@ function gameBegin(newlevel) {
     resetclk();
     clickAction();
 }
-
+// click 
 function clickAction() {
     btns.forEach((btn) => {
         btn.addEventListener("click", clickhandler);
     });
 }
-
+// Popup 
 function showPopup() {
-    overlay.style.display = "block";
+    // overlay.style.display = "block";
     setTimeout(() => {
       closePopup();
     }, 2000);
 }
 
 function closePopup() {
-    overlay.style.display = "none";
+    closeButton.addEventListener("click", closehandler);
+}
+
+function closehandler(){
+    // popup.style.display = "none";
+    popup.innerHTML = "";
+    popup.classList.remove("popuptext")
+    // popup.classList.add("nocss");
     console.log("button clicked");
 }
-closeButton.addEventListener("click", closePopup);
+
 
 window.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
@@ -97,7 +101,7 @@ function clickhandler(evt) {
                 count++;
             } else {
                 console.log("game over");
-                h2.innerText = You Lost in level ${lvl};
+                h2.innerText = `You Lost in level ${lvl}`;
                 document.body.style.backgroundColor = "red";
                 setTimeout(() => {
                     document.body.style.backgroundColor = "#323232";
@@ -124,7 +128,7 @@ function clickhandler(evt) {
 }
 
 function flash(delay, clr, x) {
-    let flashbtn = document.getElementById(${x});
+    let flashbtn = document.getElementById(`${x}`);
     flashbtn.classList.add(clr);
     setTimeout(() => {
         flashbtn.classList.remove(clr);
