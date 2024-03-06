@@ -7,22 +7,22 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="simon-logo.jpeg" type="image/icon type">
   </head>
-  <body onload="myFunction()">
+  <body>
     <h1>Simon Says Game</h1>
     <h2>Press any key to start the game</h2>
 
     <div class="btn-container">
       <div class="line-one">
-        <div class="btn red" type="button" id="red"></div>
-        <div class="btn yellow" type="button" id="yellow"></div>
+        <div class="btn red" type="button" id="1"></div>
+        <div class="btn yellow" type="button" id="2"></div>
       </div>
       <div class="line-two">
-        <div class="btn green" type="button" id="green"></div>
-        <div class="btn purple" type="button" id="purple"></div>
+        <div class="btn green" type="button" id="3"></div>
+        <div class="btn purple" type="button" id="4"></div>
       </div>
     </div>
     <div class="reset">
-      <button class="resetbtn">Reset</button>
+      <button class="resetbtn" >Reset</button>
     </div>
     <div class="popup">
       <span class="popuptext" id="myPopup">
@@ -42,7 +42,7 @@
             <li>Have fun and challenge your memory skills!</li>
         </ul>
         <p>Are you ready to begin? Click the "Ready" button to start!</p>
-        <button id="close"> Ready</button>
+        <button id="closebtn"> Ready</button>
       </span>
     </div>
     <script src="app.js"></script>
